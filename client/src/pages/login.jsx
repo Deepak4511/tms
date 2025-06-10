@@ -4,7 +4,8 @@ import React from 'react'
 
 const Login = () => {
   return (
-    <div className='w-full h-screen flex items-center justify-around bg-gray-100'>
+    <main className='w-full min-h-screen bg-[#f3f4f6]'>
+    <div></div>
     <div className=''>
         Welcome to the Login Page
     </div>
@@ -22,7 +23,7 @@ const Login = () => {
             <button type='submit' className='w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600'>Login</button>
         </form>
     </div>
-    </div>
+    </main>
   )
 }
 
