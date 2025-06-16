@@ -7,21 +7,24 @@ import Task from './pages/Task'
 import TaskDetails from './pages/TaskDetails'
 import Trash from './pages/Trash'
 import Users from './pages/Users'
+import Sidebar from './components/common/Sidebar'
+import Navbar from './components/common/Navbar'
 
 
 
 function Layout(){
-  const user=""
+  const user="test"
 
   const location = useLocation()
 
   return user ? (
     <div className='w-full h-screen flex flex-col md:flex-row'>
-      <div className='w-1/5 h-screen bg-wjite sticky top-0 hidden md:block'>
-    {/* <Sidebar/> */}
+      <div className='w-1/5 h-screen bg-white sticky top-0 hidden md:block'>
+    <Sidebar/>
       </div>
-      <MobileSidebar/>
+      {/* <MobileSidebar/> */}
       <div className='flex-1 overflow-y-auto'>
+      <Navbar/>
         <div className='p-4 2xl:px-10'>
           <Outlet/>
         </div>
@@ -38,9 +41,10 @@ function App() {
   return (
     <main className='w-full min-h-screen bg-[#f3f4f6]'>
       <Routes>
-        
+      
+        <Route path='/login' element={<Login/>}/>
         <Route element={<Layout/>}>
-          <Route path="/" element={<Navigate to="/dashboard"/>} />
+          <Route index path="/" element={<Navigate to="/dashboard"/>} />
           <Route path='/dashboard' element={<Dashboard/>} />
           <Route path='/tasks' element={<Task/>}/>
           <Route path='/completed/:status?' element={<Task/>}/>
@@ -52,7 +56,7 @@ function App() {
           <Route path='/status'/>
           
         </Route>
-        <Route path='/login' element={<Login/>}/>
+        
       </Routes>
     </main>
   )
