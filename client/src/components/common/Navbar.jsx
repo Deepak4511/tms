@@ -5,6 +5,7 @@ import { Button } from "../ui/button";
 import { Menu, Search } from "lucide-react";
 import { setOpenSidebar } from "@/redux/slices/authSlice";
 import { Input } from "../ui/input";
+import UserAvatar from "../ui/userAvatar";
 
 const Navbar = () => {
     const { user } = useSelector((state) => state.auth);
@@ -44,10 +45,15 @@ const Navbar = () => {
           <input
             type="text"
             placeholder="Search"
-            className="flex-1 outline-none bg-transparent placeholder:text-gray-500 text-gray-800 bo"
+            className="flex-1 outline-none bg-transparent placeholder:text-gray-500 text-gray-800 "
           />
         </form>
         {/* )} */}
+      </div>
+
+      <div className="flex gap-2 items-center">
+      <UserAvatar/>
+
       </div>
     </div>
   );
