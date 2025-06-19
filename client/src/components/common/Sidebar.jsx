@@ -1,7 +1,7 @@
 import { setOpenSidebar } from "@/redux/slices/authSlice";
 import clsx from "clsx";
 import {
-  BookCheck,
+  ChartLine,
   CheckCheck,
   CircleCheck,
   CircleCheckBig,
@@ -35,7 +35,7 @@ const linkData = [
   {
     label: "In Progress",
     link: "in-progress",
-    icon: <BookCheck />,
+    icon: <ChartLine />,
   },
   {
     label: "To Do",
